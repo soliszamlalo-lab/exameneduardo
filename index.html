@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Papelería Escolar</title>
+</head>
+
+<body></body>
+
+    <center>
+        <h1>Papelería Escolar</h1>
+        <h3>Calculadora de copias</h3>
+
+        <label>Copias a color:</label>
+        <input id="color" value="0">
+        <br><br>
+
+        <label>Copias blanco y negro:</label>
+        <input id="bn" value="0">
+        <br><br>
+
+        <label>
+            <input type="checkbox" id="credencial">
+            Tengo credencial de estudiante
+        </label>
+
+        <br><br>
+
+        <button onclick="calcular()">Calcular</button>
+
+        <h3 id="resultado"></h3>
+    </center>
+
+    <script>
+        function calcular() {
+            var color = document.getElementById("color").value;
+            var bn = document.getElementById("bn").value;
+            var credencial = document.getElementById("credencial").checked;
+
+            var total = (color * 3) + (bn * 1);
+
+            if (credencial) {
+                total = total - (total * 0.10);
+            }
+
+            document.getElementById("resultado").innerHTML =
+                "Total a pagar: $" + total;
+        }
+    </script>
+
+</body>
+</html>
